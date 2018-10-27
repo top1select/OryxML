@@ -32,8 +32,8 @@ public final class KeyMessageImpl<K, M> implements KeyMessage<K,M> {
         if (!(o instanceof KeyMessageImpl)) {
             return false;
         }
-
-        KeyMessageImpl<K, M> other = (KeyMessageImpl<K, M>) o;
+        @SuppressWarnings("unchecked")
+        KeyMessageImpl<K, M> other = (KeyMessageImpl<K,M>) o;
         return Objects.equals(key, other.key) && Objects.equals(message, other.message);
     }
 
